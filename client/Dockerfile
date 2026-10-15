@@ -1,11 +1,11 @@
 FROM node:20-alpine as builder
-WORKDIR /app
-COPY package.json ./
-COPY client/package.json ./client/
-COPY server/package.json ./server/
+WORKDIR /app/client
+COPY client/package*.json ./
 RUN npm install
-COPY . .
-RUN npm run build --workspace=client
+COPY client ./
+ARG VITE_API_URL=/api
+ENV VITE_API_URL=$VITE_API_URL
+RUN npm run build
 
 FROM nginx:alpine
 COPY --from=builder /app/client/dist /usr/share/nginx/html

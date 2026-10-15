@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 export const api = axios.create({
   baseURL: API_URL,
@@ -106,6 +106,7 @@ export const authAPI = {
 export const tracksAPI = {
   list: (params?: any) => api.get('/tracks', { params }),
   get: (id: string) => api.get(`/tracks/${id}`),
+  create: (data: any) => api.post('/tracks', data),
   getDownloadUrl: (id: string) => api.get(`/tracks/${id}/download`),
   play: (id: string) => api.post(`/tracks/${id}/play`),
 };

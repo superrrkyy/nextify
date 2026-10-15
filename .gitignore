@@ -53,8 +53,7 @@ Thumbs.db
 coverage
 .nyc_output
 
-# PWA
-client/public/sw.js
+# PWA (generated workbox files ignored)
 client/public/workbox-*.js
 
 # Uploads

@@ -1,0 +1,76 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build
+dist
+build
+out
+.next
+.nuxt
+.output
+.parcel-cache
+.turbo
+client/dist
+server/dist
+
+# Env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# DB
+prisma/dev.db
+prisma/dev.db-journal
+server/prisma/dev.db
+server/prisma/dev.db-journal
+*.db
+*.db-journal
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Testing
+coverage
+.nyc_output
+
+# PWA
+client/public/sw.js
+client/public/workbox-*.js
+
+# Uploads
+uploads
+storage
+
+# Misc
+.cache
+.local
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.venv
+.svelte-kit
+.tox
+.nox
+__pycache__
+target
+Unselected\ files

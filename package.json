@@ -1,0 +1,24 @@
+{
+  "name": "nextify",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Nextify - Your Sound. Your Era. Your Nextify.",
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "dev:client": "npm run dev --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "build": "npm run build --workspace=server && npm run build --workspace=client",
+    "start": "npm run start --workspace=server",
+    "lint": "npm run lint --workspace=client && npm run lint --workspace=server",
+    "typecheck": "npm run typecheck --workspace=client && npm run typecheck --workspace=server",
+    "test": "npm run test --workspace=server && npm run test --workspace=client",
+    "test:e2e": "npm run test:e2e --workspace=client",
+    "db:migrate": "npm run db:migrate --workspace=server",
+    "db:seed": "npm run db:seed --workspace=server",
+    "db:generate": "npm run db:generate --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

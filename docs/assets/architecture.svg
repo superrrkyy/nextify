@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Diagram arsitektur sistem Nextify">
+  <title>Arsitektur Nextify — Client, REST API, Database, dan Storage</title>
+  <defs>
+    <linearGradient id="arGradA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#63F5C2"/>
+      <stop offset="1" stop-color="#38D9A9"/>
+    </linearGradient>
+    <linearGradient id="arGradCard" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#151E36"/>
+      <stop offset="1" stop-color="#0D1322"/>
+    </linearGradient>
+    <linearGradient id="arGradBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="arGradViolet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <radialGradient id="arGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#38D9A9" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#38D9A9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="arGlowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#3B82F6" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="arSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <clipPath id="arFrame"><rect x="0" y="0" width="1200" height="600" rx="28"/></clipPath>
+    <style><![CDATA[
+      .arF { font-family: Inter, 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+      @keyframes arDash { to { stroke-dashoffset: -64; } }
+      @keyframes arPulse { 0%,100% { opacity: 0.25; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.07); } }
+      @keyframes arBlink { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+      @keyframes arFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+      .arWire { stroke-dasharray: 10 8; animation: arDash 1.6s linear infinite; }
+      .arGlowP { animation: arPulse 6s ease-in-out infinite; }
+      .arBlink { animation: arBlink 2.2s ease-in-out infinite; }
+      .arFloat { animation: arFloat 6s ease-in-out infinite; }
+      .arPacket { animation: arBlink 1.6s ease-in-out infinite; }
+    ]]></style>
+  </defs>
+
+  <g clip-path="url(#arFrame)">
+    <rect width="1200" height="600" fill="#070B14"/>
+    <circle class="arGlowP" cx="230" cy="220" r="270" fill="url(#arGlow)"/>
+    <circle class="arGlowP" cx="980" cy="430" r="280" fill="url(#arGlowB)" style="animation-delay:2s"/>
+
+    <!-- ===== Header ===== -->
+    <text class="arF" x="56" y="58" font-size="12.5" font-weight="700" letter-spacing="3.4" fill="#63F5C2">ARSITEKTUR SISTEM</text>
+    <text class="arF" x="56" y="86" font-size="22" font-weight="600" fill="#F8FAFC">Monorepo npm workspaces — client + server</text>
+
+    <!-- ================= CLIENT ================= -->
+    <g class="arFloat">
+      <rect x="56" y="118" width="256" height="330" rx="22" fill="url(#arGradCard)" stroke="#1E293B" stroke-width="1.5"/>
+      <rect x="56" y="118" width="256" height="52" rx="22" fill="#63F5C2" fill-opacity="0.08"/>
+      <rect x="80" y="140" width="26" height="26" rx="8" fill="url(#arGradA)"/>
+      <path d="M89 147v12l10-6z" fill="#070B14"/>
+      <text class="arF" x="118" y="150" font-size="15" font-weight="700" fill="#F8FAFC">CLIENT</text>
+      <text class="arF" x="118" y="166" font-size="11.5" fill="#94A3B8">React 18 · Vite · TS</text>
+
+      <g class="arF" font-size="12.5" fill="#94A3B8">
+        <g><circle class="arBlink" cx="86" cy="200" r="3.5" fill="#63F5C2"/><text x="100" y="204">AudioContext — 1 elemen audio</text></g>
+        <g><circle class="arBlink" cx="86" cy="228" r="3.5" fill="#63F5C2" style="animation-delay:.3s"/><text x="100" y="232">AuthContext + protected route</text></g>
+        <g><circle class="arBlink" cx="86" cy="256" r="3.5" fill="#63F5C2" style="animation-delay:.6s"/><text x="100" y="260">Zustand · React Router 6</text></g>
+        <g><circle class="arBlink" cx="86" cy="284" r="3.5" fill="#63F5C2" style="animation-delay:.9s"/><text x="100" y="288">Framer Motion · Tailwind</text></g>
+        <g><circle class="arBlink" cx="86" cy="312" r="3.5" fill="#63F5C2" style="animation-delay:1.2s"/><text x="100" y="316">Media Session API</text></g>
+        <g><circle class="arBlink" cx="86" cy="340" r="3.5" fill="#63F5C2" style="animation-delay:1.5s"/><text x="100" y="344">Axios + refresh interceptor</text></g>
+      </g>
+
+      <rect x="80" y="368" width="208" height="56" rx="14" fill="#111827" stroke="#1E293B"/>
+      <text class="arF" x="98" y="390" font-size="11" font-weight="700" letter-spacing="1.6" fill="#63F5C2">PWA</text>
+      <text class="arF" x="98" y="410" font-size="11.5" fill="#94A3B8">sw.js cache shell, bukan audio</text>
+    </g>
+
+    <!-- ================= REST API ================= -->
+    <g>
+      <rect x="452" y="118" width="288" height="330" rx="22" fill="url(#arGradCard)" stroke="#1E293B" stroke-width="1.5"/>
+      <rect x="452" y="118" width="288" height="52" rx="22" fill="#3B82F6" fill-opacity="0.1"/>
+      <rect x="476" y="140" width="26" height="26" rx="8" fill="url(#arGradBlue)"/>
+      <path d="M484 148h10M484 153h10M484 158h7" stroke="#070B14" stroke-width="2.2" stroke-linecap="round"/>
+      <text class="arF" x="514" y="150" font-size="15" font-weight="700" fill="#F8FAFC">REST API</text>
+      <text class="arF" x="514" y="166" font-size="11.5" fill="#94A3B8">Express 4 · Node 20 · TS</text>
+
+      <g class="arF" font-size="12" fill="#94A3B8">
+        <rect x="476" y="190" width="112" height="28" rx="9" fill="#111827" stroke="#1E293B"/><text x="532" y="209" text-anchor="middle">routes/</text>
+        <rect x="596" y="190" width="120" height="28" rx="9" fill="#111827" stroke="#1E293B"/><text x="656" y="209" text-anchor="middle">controllers/</text>
+        <rect x="476" y="226" width="112" height="28" rx="9" fill="#111827" stroke="#1E293B"/><text x="532" y="245" text-anchor="middle">validators/</text>
+        <rect x="596" y="226" width="120" height="28" rx="9" fill="#111827" stroke="#1E293B"/><text x="656" y="245" text-anchor="middle">middleware/</text>
+        <rect x="476" y="262" width="112" height="28" rx="9" fill="#111827" stroke="#1E293B"/><text x="532" y="281" text-anchor="middle">config/</text>
+        <rect x="596" y="262" width="120" height="28" rx="9" fill="#111827" stroke="#1E293B"/><text x="656" y="281" text-anchor="middle">utils/</text>
+      </g>
+
+      <rect x="476" y="304" width="240" height="120" rx="14" fill="#111827" stroke="#1E293B"/>
+      <text class="arF" x="494" y="326" font-size="11" font-weight="700" letter-spacing="1.6" fill="#63F5C2">PIPELINE KEAMANAN</text>
+      <g class="arF" font-size="11.5" fill="#94A3B8">
+        <text x="494" y="348">Helmet → CORS → rate-limit</text>
+        <text x="494" y="368">Zod → authenticate → authorize</text>
+        <text x="494" y="388">controller → errorHandler</text>
+        <text x="494" y="410" fill="#63F5C2">Tanpa stack trace di produksi</text>
+      </g>
+    </g>
+
+    <!-- ================= DATABASE ================= -->
+    <g>
+      <rect x="884" y="118" width="260" height="150" rx="22" fill="url(#arGradCard)" stroke="#1E293B" stroke-width="1.5"/>
+      <rect x="908" y="142" width="26" height="26" rx="8" fill="url(#arGradViolet)"/>
+      <ellipse cx="921" cy="150" rx="7" ry="2.6" fill="#070B14"/>
+      <ellipse cx="921" cy="160" rx="7" ry="2.6" fill="#070B14"/>
+      <text class="arF" x="946" y="152" font-size="15" font-weight="700" fill="#F8FAFC">DATABASE</text>
+      <text class="arF" x="946" y="168" font-size="11.5" fill="#94A3B8">Prisma · PostgreSQL 15</text>
+      <g class="arF" font-size="11.5" fill="#94A3B8">
+        <text x="908" y="204">13 model: User, Session, Genre,</text>
+        <text x="908" y="222">Artist, Album, Track, Playlist,</text>
+        <text x="908" y="240">PlaylistTrack, Like, PlaybackHistory,</text>
+        <text x="908" y="258" fill="#63F5C2">SearchHistory, FavoriteArtist, Download</text>
+      </g>
+    </g>
+
+    <!-- ================= STORAGE ================= -->
+    <g>
+      <rect x="884" y="298" width="260" height="150" rx="22" fill="url(#arGradCard)" stroke="#1E293B" stroke-width="1.5"/>
+      <rect x="908" y="322" width="26" height="26" rx="8" fill="url(#arGradA)"/>
+      <path d="M915 335l6-6 6 6M921 329v12" stroke="#070B14" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <text class="arF" x="946" y="332" font-size="15" font-weight="700" fill="#F8FAFC">STORAGE</text>
+      <text class="arF" x="946" y="348" font-size="11.5" fill="#94A3B8">S3-compatible · private bucket</text>
+      <g class="arF" font-size="11.5" fill="#94A3B8">
+        <text x="908" y="384">Signed URL JWT — kedaluwarsa</text>
+        <text x="908" y="402">5 menit · hanya bila</text>
+        <text x="908" y="424" fill="#63F5C2">downloadAllowed = true</text>
+      </g>
+    </g>
+
+    <!-- ================= WIRES ================= -->
+    <g fill="none" stroke="#1E293B" stroke-width="2">
+      <path d="M312 283 H 452"/>
+      <path d="M740 210 C 810 210, 820 193, 884 193"/>
+      <path d="M740 373 C 810 373, 820 373, 884 373"/>
+    </g>
+    <g fill="none" stroke="#63F5C2" stroke-width="2.2" stroke-opacity="0.85">
+      <path class="arWire" d="M312 283 H 452"/>
+      <path class="arWire" d="M740 210 C 810 210, 820 193, 884 193" stroke="#A78BFA" style="animation-delay:.4s"/>
+      <path class="arWire" d="M740 373 C 810 373, 820 373, 884 373" style="animation-delay:.8s"/>
+    </g>
+
+    <!-- packets -->
+    <circle r="4.5" fill="#63F5C2" class="arPacket">
+      <animateMotion dur="2.4s" repeatCount="indefinite" path="M312 283 H 452"/>
+    </circle>
+    <circle r="4.5" fill="#63F5C2" class="arPacket" style="animation-delay:1.2s">
+      <animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M452 283 H 312"/>
+    </circle>
+    <circle r="4.5" fill="#A78BFA" class="arPacket" style="animation-delay:.4s">
+      <animateMotion dur="2.6s" begin="0.4s" repeatCount="indefinite" path="M740 210 C 810 210, 820 193, 884 193"/>
+    </circle>
+    <circle r="4.5" fill="#63F5C2" class="arPacket" style="animation-delay:.8s">
+      <animateMotion dur="2.6s" begin="0.8s" repeatCount="indefinite" path="M740 373 C 810 373, 820 373, 884 373"/>
+    </circle>
+
+    <!-- wire labels -->
+    <g class="arF" font-size="10.5" font-weight="700" letter-spacing="1.2">
+      <text x="382" y="270" text-anchor="middle" fill="#63F5C2">JSON / JWT</text>
+      <text x="812" y="178" text-anchor="middle" fill="#A78BFA">PRISMA</text>
+      <text x="812" y="360" text-anchor="middle" fill="#63F5C2">SIGNED URL</text>
+    </g>
+
+    <!-- ===== Bottom chips ===== -->
+    <g class="arF" font-size="12" font-weight="600" fill="#94A3B8">
+      <rect x="56" y="492" width="212" height="42" rx="14" fill="#111827" stroke="#1E293B"/>
+      <circle class="arBlink" cx="80" cy="513" r="4" fill="#63F5C2"/>
+      <text x="94" y="518">bcrypt — 12 rounds</text>
+
+      <rect x="284" y="492" width="248" height="42" rx="14" fill="#111827" stroke="#1E293B"/>
+      <circle class="arBlink" cx="308" cy="513" r="4" fill="#63F5C2" style="animation-delay:.4s"/>
+      <text x="322" y="518">JWT access 15m · refresh 7d</text>
+
+      <rect x="548" y="492" width="248" height="42" rx="14" fill="#111827" stroke="#1E293B"/>
+      <circle class="arBlink" cx="572" cy="513" r="4" fill="#63F5C2" style="animation-delay:.8s"/>
+      <text x="586" y="518">rate limit 1000 / 20 per 15m</text>
+
+      <rect x="812" y="492" width="332" height="42" rx="14" fill="#111827" stroke="#1E293B"/>
+      <circle class="arBlink" cx="836" cy="513" r="4" fill="#63F5C2" style="animation-delay:1.2s"/>
+      <text x="850" y="518">Zod validation di seluruh endpoint</text>
+    </g>
+  </g>
+
+  <rect x="0.75" y="0.75" width="1198.5" height="598.5" rx="27.5" fill="none" stroke="#1E293B"/>
+  <rect x="0.75" y="0.75" width="1198.5" height="598.5" rx="27.5" fill="none" stroke="url(#arGradA)" stroke-opacity="0.2"/>
+</svg>

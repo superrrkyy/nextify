@@ -53,6 +53,8 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null);
   const [queueVisible, setQueueVisible] = useState(false);
   const [shuffledIndices, setShuffledIndices] = useState<number[]>([]);
+  const currentTrackRef = useRef<Track | null>(null);
+  const nextRef = useRef<() => void>(() => {});
   const progressIntervalRef = useRef<number | null>(null);
   const lastHistoryRecordRef = useRef<number>(0);
 
@@ -74,12 +76,13 @@ export function AudioProvider({ children }: { children: ReactNode }) {
 
     const handleEnded = () => {
       // Record playback history
-      if (currentTrack) {
+      const endedTrack = currentTrackRef.current;
+      if (endedTrack) {
         const completion = audio.duration ? audio.currentTime / audio.duration : 0;
         if (completion > 0.3 && Date.now() - lastHistoryRecordRef.current > 5000) {
           lastHistoryRecordRef.current = Date.now();
-          historyAPI.record(currentTrack.id, completion).catch(() => {});
-          tracksAPI.play(currentTrack.id).catch(() => {});
+          historyAPI.record(endedTrack.id, completion).catch(() => {});
+          tracksAPI.play(endedTrack.id).catch(() => {});
         }
       }
 
@@ -87,7 +90,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         audio.currentTime = 0;
         audio.play().catch(() => {});
       } else {
-        next();
+        nextRef.current();
       }
     };
 
@@ -132,6 +135,10 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     }
     localStorage.setItem('nextify-volume', volume.toString());
   }, [volume]);
+
+  useEffect(() => {
+    currentTrackRef.current = currentTrack;
+  }, [currentTrack]);
 
   // Media Session API
   useEffect(() => {
@@ -371,6 +378,10 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       play(nextTrack);
     }
   }, [getNextIndex, queue, play]);
+
+  useEffect(() => {
+    nextRef.current = next;
+  }, [next]);
 
   const previous = useCallback(() => {
     const prevIdx = getPrevIndex();

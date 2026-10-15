@@ -50,17 +50,7 @@ export function Admin() {
   const handleCreateTrack = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const { data } = await tracksAPI.list(); // dummy to keep api
-      // Actually create via direct api call
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/tracks`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-        },
-        body: JSON.stringify(newTrack),
-      });
-      const result = await response.json();
+      const { data: result } = await tracksAPI.create(newTrack);
       if (result.success) {
         success('Track created');
         setShowCreateTrack(false);

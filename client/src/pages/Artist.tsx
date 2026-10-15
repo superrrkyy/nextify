@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { artistsAPI } from '../services/api';
+import { artistsAPI, albumsAPI } from '../services/api';
 import { Artist as ArtistType } from '../types';
 import { TrackRow } from '../components/music/TrackRow';
 import { Button } from '../components/ui/Button';
@@ -90,9 +90,9 @@ export function Album() {
 
   useEffect(() => {
     if (id) {
-      fetch(`${import.meta.env.VITE_API_URL}/albums/${id}`)
-        .then((r) => r.json())
-        .then((d) => { if (d.success) setAlbum(d.data); })
+      albumsAPI.get(id)
+        .then(({ data: d }) => { if (d.success) setAlbum(d.data); })
+        .catch(() => setAlbum(null))
         .finally(() => setLoading(false));
     }
   }, [id]);

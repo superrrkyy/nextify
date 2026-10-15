@@ -234,12 +234,21 @@ export async function getRecommendations(req: AuthRequest, res: Response, next: 
     }
 
     // Viral: recent with high playCount growth - simplified as recent popular
-    const viral = await prisma.track.findMany({
+    let viral = await prisma.track.findMany({
       where: { releaseDate: { gte: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000) } },
       include: { artist: true, album: true, genre: true },
       orderBy: { playCount: 'desc' },
       take: 10,
     });
+
+    // Fallback so the section is never empty when seed data is older
+    if (viral.length === 0) {
+      viral = await prisma.track.findMany({
+        include: { artist: true, album: true, genre: true },
+        orderBy: { playCount: 'desc' },
+        take: 10,
+      });
+    }
 
     // Nostalgia
     const eighties = await prisma.track.findMany({

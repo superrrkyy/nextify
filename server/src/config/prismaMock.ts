@@ -122,8 +122,20 @@ class MockModel {
         const countSelect = (value as any).select;
         result._count = {};
         for (const countKey of Object.keys(countSelect)) {
-          if (countKey === 'tracks' && this.name === 'playlist') {
-            result._count.tracks = this.db.playlistTrack.data.filter((pt: any) => pt.playlistId === item.id).length;
+          if (countKey === 'tracks') {
+            if (this.name === 'playlist') {
+              result._count.tracks = this.db.playlistTrack.data.filter((pt: any) => pt.playlistId === item.id).length;
+            } else if (this.name === 'artist') {
+              result._count.tracks = this.db.track.data.filter((t: any) => t.artistId === item.id).length;
+            } else if (this.name === 'album') {
+              result._count.tracks = this.db.track.data.filter((t: any) => t.albumId === item.id).length;
+            }
+          } else if (countKey === 'playlists' && this.name === 'user') {
+            result._count.playlists = this.db.playlist.data.filter((p: any) => p.ownerId === item.id).length;
+          } else if (countKey === 'likes' && this.name === 'user') {
+            result._count.likes = this.db.like.data.filter((l: any) => l.userId === item.id).length;
+          } else if (countKey === 'albums' && this.name === 'artist') {
+            result._count.albums = this.db.album.data.filter((a: any) => a.artistId === item.id).length;
           }
         }
         continue;
@@ -256,7 +268,19 @@ class MockModel {
               selected._count = {};
               for (const countKey of Object.keys(args.select._count.select)) {
                 if (countKey === 'tracks') {
-                  selected._count.tracks = this.db.playlistTrack.data.filter((pt: any) => pt.playlistId === item.id).length;
+                  if (this.name === 'playlist') {
+                    selected._count.tracks = this.db.playlistTrack.data.filter((pt: any) => pt.playlistId === item.id).length;
+                  } else if (this.name === 'artist') {
+                    selected._count.tracks = this.db.track.data.filter((t: any) => t.artistId === item.id).length;
+                  } else if (this.name === 'album') {
+                    selected._count.tracks = this.db.track.data.filter((t: any) => t.albumId === item.id).length;
+                  }
+                } else if (countKey === 'playlists' && this.name === 'user') {
+                  selected._count.playlists = this.db.playlist.data.filter((p: any) => p.ownerId === item.id).length;
+                } else if (countKey === 'likes' && this.name === 'user') {
+                  selected._count.likes = this.db.like.data.filter((l: any) => l.userId === item.id).length;
+                } else if (countKey === 'albums' && this.name === 'artist') {
+                  selected._count.albums = this.db.album.data.filter((a: any) => a.artistId === item.id).length;
                 }
               }
             } else {

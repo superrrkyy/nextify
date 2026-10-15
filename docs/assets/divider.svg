@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" width="1200" height="80" role="presentation" aria-hidden="true">
+  <defs>
+    <linearGradient id="dvLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#63F5C2" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#63F5C2" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#63F5C2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="dvBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#63F5C2"/>
+      <stop offset="1" stop-color="#38D9A9" stop-opacity="0.25"/>
+    </linearGradient>
+    <radialGradient id="dvDot" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#63F5C2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#63F5C2" stop-opacity="0"/>
+    </radialGradient>
+    <style><![CDATA[
+      @keyframes dvEq { 0%,100% { transform: scaleY(0.18); } 50% { transform: scaleY(1); } }
+      .dvBar { transform-box: fill-box; transform-origin: 50% 50%; animation: dvEq 1.1s ease-in-out infinite; }
+      @keyframes dvTravel { 0% { transform: translateX(-260px); opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { transform: translateX(1220px); opacity: 0; } }
+      .dvTravel { animation: dvTravel 7s ease-in-out infinite; }
+    ]]></style>
+  </defs>
+
+  <rect x="60" y="39.4" width="1080" height="1.2" fill="url(#dvLine)"/>
+  <g fill="url(#dvBar)">
+    <rect class="dvBar" x="536" y="26" width="4" height="28" rx="2"/>
+    <rect class="dvBar" x="548" y="26" width="4" height="28" rx="2" style="animation-delay:.09s"/>
+    <rect class="dvBar" x="560" y="26" width="4" height="28" rx="2" style="animation-delay:.18s"/>
+    <rect class="dvBar" x="572" y="26" width="4" height="28" rx="2" style="animation-delay:.27s"/>
+    <rect class="dvBar" x="584" y="26" width="4" height="28" rx="2" style="animation-delay:.36s"/>
+    <rect class="dvBar" x="596" y="26" width="4" height="28" rx="2" style="animation-delay:.45s"/>
+    <rect class="dvBar" x="608" y="26" width="4" height="28" rx="2" style="animation-delay:.54s"/>
+    <rect class="dvBar" x="620" y="26" width="4" height="28" rx="2" style="animation-delay:.63s"/>
+    <rect class="dvBar" x="632" y="26" width="4" height="28" rx="2" style="animation-delay:.72s"/>
+    <rect class="dvBar" x="644" y="26" width="4" height="28" rx="2" style="animation-delay:.81s"/>
+    <rect class="dvBar" x="656" y="26" width="4" height="28" rx="2" style="animation-delay:.9s"/>
+  </g>
+  <g class="dvTravel">
+    <circle cx="0" cy="40" r="18" fill="url(#dvDot)"/>
+    <circle cx="0" cy="40" r="3.2" fill="#63F5C2"/>
+  </g>
+</svg>

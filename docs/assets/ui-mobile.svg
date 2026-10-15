@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-label="Tampilan responsif Nextify di perangkat mobile">
+  <title>Nextify — tampilan mobile: beranda, player layar penuh, dan pustaka</title>
+  <defs>
+    <linearGradient id="mbGradA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#63F5C2"/>
+      <stop offset="1" stop-color="#38D9A9"/>
+    </linearGradient>
+    <linearGradient id="mbArt1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38D9A9"/><stop offset="1" stop-color="#0E7490"/></linearGradient>
+    <linearGradient id="mbArt2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A78BFA"/><stop offset="1" stop-color="#4C1D95"/></linearGradient>
+    <linearGradient id="mbArt3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FB923C"/><stop offset="1" stop-color="#7C2D12"/></linearGradient>
+    <linearGradient id="mbArt4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#1E3A8A"/></linearGradient>
+    <linearGradient id="mbHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#134E4A"/><stop offset="1" stop-color="#0D1322"/></linearGradient>
+    <linearGradient id="mbFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070B14" stop-opacity="0"/>
+      <stop offset="1" stop-color="#070B14" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="mbGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#38D9A9" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#38D9A9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mbGlowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#7C3AED" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="mbFrame"><rect x="0" y="0" width="1200" height="620" rx="28"/></clipPath>
+    <clipPath id="mbPhA"><rect x="120" y="34" width="250" height="500" rx="34"/></clipPath>
+    <clipPath id="mbPhB"><rect x="475" y="34" width="250" height="500" rx="34"/></clipPath>
+    <clipPath id="mbPhC"><rect x="830" y="34" width="250" height="500" rx="34"/></clipPath>
+    <style><![CDATA[
+      .mbF { font-family: Inter, 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+      @keyframes mbEq    { 0%,100% { transform: scaleY(0.18); } 50% { transform: scaleY(1); } }
+      @keyframes mbFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+      @keyframes mbBlink { 0%,100% { opacity: .3; } 50% { opacity: 1; } }
+      @keyframes mbRing  { 0% { transform: scale(.88); opacity: .5; } 100% { transform: scale(1.65); opacity: 0; } }
+      @keyframes mbAmb   { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(22px,-16px) scale(1.1); } }
+      .mbEq { transform-box: fill-box; transform-origin: 50% 100%; animation: mbEq 1.05s ease-in-out infinite; }
+      .mbFloat { animation: mbFloat 6.5s ease-in-out infinite; }
+      .mbFloat2 { animation: mbFloat 7.8s ease-in-out infinite; }
+      .mbFloat3 { animation: mbFloat 7.1s ease-in-out infinite; }
+      .mbBlink { animation: mbBlink 2.3s ease-in-out infinite; }
+      .mbRing { transform-box: fill-box; transform-origin: 50% 50%; animation: mbRing 2.7s ease-out infinite; }
+      .mbAmb { animation: mbAmb 15s ease-in-out infinite; }
+    ]]></style>
+  </defs>
+
+  <g clip-path="url(#mbFrame)">
+    <rect width="1200" height="620" fill="#070B14"/>
+    <circle class="mbAmb" cx="245" cy="180" r="230" fill="url(#mbGlow)"/>
+    <circle class="mbAmb" cx="960" cy="440" r="250" fill="url(#mbGlowB)" style="animation-delay:3s"/>
+
+    <text class="mbF" x="60" y="600" font-size="11.5" font-weight="700" letter-spacing="2.6" fill="#64748B">RESPONSIF</text>
+    <g class="mbF" font-size="11.5" fill="#94A3B8">
+      <text x="400" y="600">Desktop</text>
+      <text x="470" y="600" fill="#63F5C2">1920 · 1440 · 1280 · 1024</text>
+      <text x="690" y="600">Mobile</text>
+      <text x="748" y="600" fill="#63F5C2">430 · 390 · 375 · 320</text>
+      <text x="940" y="600">Bottom nav · player kompak · player imersif</text>
+    </g>
+
+    <!-- ============ PHONE A : BERANDA ============ -->
+    <g class="mbFloat">
+      <rect x="126" y="44" width="238" height="490" rx="30" fill="#000000" opacity="0.5"/>
+      <rect x="120" y="34" width="250" height="500" rx="34" fill="#0B1120" stroke="#1E293B" stroke-width="2"/>
+      <g clip-path="url(#mbPhA)">
+        <rect x="120" y="34" width="250" height="500" fill="#0B1120"/>
+        <rect x="215" y="50" width="60" height="14" rx="7" fill="#070B14"/>
+        <text class="mbF" x="140" y="60" font-size="9" fill="#94A3B8">9:41</text>
+        <g fill="#94A3B8"><rect x="330" y="52" width="16" height="8" rx="2"/><rect x="350" y="53" width="8" height="6" rx="1"/></g>
+
+        <text class="mbF" x="140" y="94" font-size="11" fill="#94A3B8">Selamat malam</text>
+        <text class="mbF" x="140" y="114" font-size="17" font-weight="700" fill="#F8FAFC">Halo, Demo</text>
+        <circle cx="344" cy="102" r="14" fill="url(#mbArt4)"/>
+
+        <rect x="136" y="128" width="218" height="34" rx="17" fill="#111827" stroke="#1E293B"/>
+        <g fill="none" stroke="#64748B" stroke-width="1.6"><circle cx="158" cy="145" r="5.5"/><path d="M162 149l4 4"/></g>
+        <text class="mbF" x="174" y="150" font-size="11" fill="#64748B">Cari lagu atau artis…</text>
+
+        <rect x="136" y="174" width="218" height="94" rx="16" fill="url(#mbHero)" stroke="#1E293B"/>
+        <text class="mbF" x="152" y="200" font-size="9.5" font-weight="700" letter-spacing="2" fill="#63F5C2">TRENDING</text>
+        <text class="mbF" x="152" y="222" font-size="13" font-weight="700" fill="#F8FAFC">Midnight City Lights</text>
+        <text class="mbF" x="152" y="240" font-size="10.5" fill="#94A3B8">Luna Echo · Pop · 3:35</text>
+        <circle class="mbRing" cx="326" cy="221" r="16" fill="none" stroke="#63F5C2" stroke-width="1.6"/>
+        <circle cx="326" cy="221" r="16" fill="url(#mbGradA)"/>
+        <path d="M321 214v14l12-7z" fill="#070B14"/>
+
+        <text class="mbF" x="140" y="292" font-size="13" font-weight="700" fill="#F8FAFC">Trending Now</text>
+
+        <rect x="136" y="302" width="218" height="42" rx="11" fill="#63F5C2" fill-opacity="0.09" stroke="#63F5C2" stroke-opacity="0.22"/>
+        <rect x="146" y="308" width="30" height="30" rx="8" fill="url(#mbArt1)"/>
+        <text class="mbF" x="186" y="321" font-size="11.5" font-weight="600" fill="#F8FAFC">Midnight City Lights</text>
+        <text class="mbF" x="186" y="335" font-size="9.5" fill="#94A3B8">Luna Echo</text>
+        <g fill="#63F5C2">
+          <rect class="mbEq" x="326" y="312" width="3.5" height="22" rx="1.75"/>
+          <rect class="mbEq" x="333" y="312" width="3.5" height="22" rx="1.75" style="animation-delay:.12s"/>
+          <rect class="mbEq" x="340" y="312" width="3.5" height="22" rx="1.75" style="animation-delay:.24s"/>
+        </g>
+
+        <g class="mbF" font-size="11.5" fill="#94A3B8">
+          <rect x="146" y="352" width="30" height="30" rx="8" fill="url(#mbArt2)"/>
+          <text x="186" y="365" font-weight="600" fill="#F8FAFC">Neon Horizon</text>
+          <text x="186" y="379" font-size="9.5">Neon Dreams</text>
+          <text x="344" y="370" text-anchor="end" font-size="9.5">3:18</text>
+
+          <rect x="146" y="394" width="30" height="30" rx="8" fill="url(#mbArt3)"/>
+          <text x="186" y="407" font-weight="600" fill="#F8FAFC">Flow State</text>
+          <text x="186" y="421" font-size="9.5">Kai Rivera</text>
+          <text x="344" y="412" text-anchor="end" font-size="9.5">3:07</text>
+        </g>
+
+        <!-- compact player -->
+        <rect x="130" y="440" width="230" height="42" rx="13" fill="#111827" stroke="#1E293B"/>
+        <rect x="138" y="447" width="28" height="28" rx="8" fill="url(#mbArt1)"/>
+        <text class="mbF" x="174" y="459" font-size="10.5" font-weight="600" fill="#F8FAFC">Midnight City Lights</text>
+        <text class="mbF" x="174" y="472" font-size="9" fill="#94A3B8">Luna Echo</text>
+        <path d="M330 455v12l10-6z" fill="#63F5C2"/>
+        <rect x="130" y="479" width="230" height="3" fill="#1E293B"/>
+        <rect x="130" y="479" width="0" height="3" fill="#63F5C2">
+          <animate attributeName="width" values="0;230;230;0" keyTimes="0;0.86;0.97;1" dur="11s" repeatCount="indefinite"/>
+        </rect>
+
+        <!-- bottom nav -->
+        <rect x="120" y="494" width="250" height="40" fill="#0D1322"/>
+        <line x1="120" y1="494" x2="370" y2="494" stroke="#1E293B"/>
+        <g fill="none" stroke="#63F5C2" stroke-width="1.6"><path d="M150 514v-7l6-5 6 5v7z"/></g>
+        <text class="mbF" x="156" y="527" font-size="7.5" fill="#63F5C2" text-anchor="middle">Beranda</text>
+        <g fill="none" stroke="#64748B" stroke-width="1.6"><circle cx="216" cy="510" r="5.5"/><path d="M220 514l4 4"/></g>
+        <text class="mbF" x="218" y="527" font-size="7.5" fill="#64748B" text-anchor="middle">Cari</text>
+        <g fill="none" stroke="#64748B" stroke-width="1.6"><path d="M274 505h5l6-6v18l-6-6h-5z"/></g>
+        <text class="mbF" x="278" y="527" font-size="7.5" fill="#64748B" text-anchor="middle">Pustaka</text>
+        <g fill="none" stroke="#64748B" stroke-width="1.6"><circle cx="338" cy="510" r="5"/><path d="M328 520a10 10 0 0 1 20 0"/></g>
+        <text class="mbF" x="338" y="527" font-size="7.5" fill="#64748B" text-anchor="middle">Profil</text>
+      </g>
+      <text class="mbF" x="245" y="558" font-size="12.5" font-weight="600" fill="#F8FAFC" text-anchor="middle">Beranda + player kompak</text>
+    </g>
+
+    <!-- ============ PHONE B : PLAYER LAYAR PENUH ============ -->
+    <g class="mbFloat2">
+      <rect x="481" y="44" width="238" height="490" rx="30" fill="#000000" opacity="0.5"/>
+      <rect x="475" y="34" width="250" height="500" rx="34" fill="#0B1120" stroke="#1E293B" stroke-width="2"/>
+      <g clip-path="url(#mbPhB)">
+        <rect x="475" y="34" width="250" height="500" fill="#0B1120"/>
+        <circle cx="600" cy="220" r="180" fill="url(#mbGlow)" opacity="0.8"/>
+        <rect x="570" y="50" width="60" height="14" rx="7" fill="#070B14"/>
+        <text class="mbF" x="495" y="60" font-size="9" fill="#94A3B8">9:41</text>
+
+        <path d="M500 84l-8 8 8 8" fill="none" stroke="#94A3B8" stroke-width="1.8"/>
+        <text class="mbF" x="600" y="92" font-size="8.5" font-weight="700" letter-spacing="2" fill="#94A3B8" text-anchor="middle">ETERNAL ECHOES</text>
+
+        <rect x="513" y="112" width="174" height="174" rx="22" fill="url(#mbArt1)" stroke="#FFFFFF" stroke-opacity="0.12"/>
+        <g stroke="#63F5C2" fill="none">
+          <circle cx="600" cy="199" r="26" stroke-width="2" stroke-opacity="0.85"/>
+          <circle cx="600" cy="199" r="44" stroke-width="1.4" stroke-opacity="0.5"/>
+          <circle cx="600" cy="199" r="62" stroke-width="1.2" stroke-opacity="0.28"/>
+        </g>
+        <circle cx="600" cy="199" r="8" fill="#070B14"/>
+
+        <text class="mbF" x="600" y="318" font-size="18" font-weight="700" fill="#F8FAFC" text-anchor="middle">Midnight City Lights</text>
+        <text class="mbF" x="600" y="338" font-size="11.5" fill="#94A3B8" text-anchor="middle">Luna Echo</text>
+        <path d="M568 350a8 8 0 0 1 0 13" fill="none" stroke="#63F5C2" stroke-width="1.8"/>
+        <path d="M577 345a15 15 0 0 1 0 23" fill="none" stroke="#63F5C2" stroke-opacity="0.5" stroke-width="1.8"/>
+
+        <text class="mbF" x="500" y="384" font-size="9" fill="#94A3B8">1:12</text>
+        <rect x="530" y="380" width="140" height="4" rx="2" fill="#1E293B"/>
+        <rect x="530" y="380" width="0" height="4" rx="2" fill="url(#mbGradA)">
+          <animate attributeName="width" values="0;140;140;0" keyTimes="0;0.86;0.97;1" dur="11s" repeatCount="indefinite"/>
+        </rect>
+        <circle cy="382" cx="530" r="5" fill="#63F5C2">
+          <animate attributeName="cx" values="530;670;670;530" keyTimes="0;0.86;0.97;1" dur="11s" repeatCount="indefinite"/>
+        </circle>
+        <text class="mbF" x="700" y="384" font-size="9" fill="#94A3B8" text-anchor="end">3:35</text>
+
+        <g fill="#CBD5E1">
+          <path d="M556 418v-16l-12 8z M543 402h-3v16h3z"/>
+          <path d="M644 402v16l12-8z M657 402h3v16h-3z"/>
+        </g>
+        <circle class="mbRing" cx="600" cy="410" r="24" fill="none" stroke="#63F5C2" stroke-width="1.8"/>
+        <circle cx="600" cy="410" r="24" fill="url(#mbGradA)"/>
+        <path d="M593 400v20l16-10z" fill="#070B14"/>
+
+        <g fill="url(#mbGradA)" opacity="0.8">
+          <rect class="mbEq" x="500" y="440" width="6" height="44" rx="3"/>
+          <rect class="mbEq" x="512" y="440" width="6" height="44" rx="3" style="animation-duration:1.3s;animation-delay:.1s"/>
+          <rect class="mbEq" x="524" y="440" width="6" height="44" rx="3" style="animation-duration:.95s;animation-delay:.2s"/>
+          <rect class="mbEq" x="536" y="440" width="6" height="44" rx="3" style="animation-duration:1.4s;animation-delay:.3s"/>
+          <rect class="mbEq" x="548" y="440" width="6" height="44" rx="3" style="animation-duration:1.1s;animation-delay:.4s"/>
+          <rect class="mbEq" x="560" y="440" width="6" height="44" rx="3" style="animation-duration:1.25s;animation-delay:.5s"/>
+          <rect class="mbEq" x="572" y="440" width="6" height="44" rx="3" style="animation-duration:.9s;animation-delay:.6s"/>
+          <rect class="mbEq" x="584" y="440" width="6" height="44" rx="3" style="animation-duration:1.45s;animation-delay:.7s"/>
+          <rect class="mbEq" x="596" y="440" width="6" height="44" rx="3" style="animation-duration:1.05s;animation-delay:.8s"/>
+          <rect class="mbEq" x="608" y="440" width="6" height="44" rx="3" style="animation-duration:1.35s;animation-delay:.9s"/>
+          <rect class="mbEq" x="620" y="440" width="6" height="44" rx="3" style="animation-duration:1.15s;animation-delay:1s"/>
+          <rect class="mbEq" x="632" y="440" width="6" height="44" rx="3" style="animation-duration:.98s;animation-delay:1.1s"/>
+          <rect class="mbEq" x="644" y="440" width="6" height="44" rx="3" style="animation-duration:1.42s;animation-delay:1.2s"/>
+          <rect class="mbEq" x="656" y="440" width="6" height="44" rx="3" style="animation-duration:1.02s;animation-delay:1.3s"/>
+          <rect class="mbEq" x="668" y="440" width="6" height="44" rx="3" style="animation-duration:1.3s;animation-delay:1.4s"/>
+          <rect class="mbEq" x="680" y="440" width="6" height="44" rx="3" style="animation-duration:1.2s;animation-delay:1.5s"/>
+          <rect class="mbEq" x="692" y="440" width="6" height="44" rx="3" style="animation-duration:1.38s;animation-delay:1.6s"/>
+        </g>
+      </g>
+      <text class="mbF" x="600" y="558" font-size="12.5" font-weight="600" fill="#F8FAFC" text-anchor="middle">Player layar penuh imersif</text>
+    </g>
+
+    <!-- ============ PHONE C : PUSTAKA ============ -->
+    <g class="mbFloat3">
+      <rect x="836" y="44" width="238" height="490" rx="30" fill="#000000" opacity="0.5"/>
+      <rect x="830" y="34" width="250" height="500" rx="34" fill="#0B1120" stroke="#1E293B" stroke-width="2"/>
+      <g clip-path="url(#mbPhC)">
+        <rect x="830" y="34" width="250" height="500" fill="#0B1120"/>
+        <rect x="925" y="50" width="60" height="14" rx="7" fill="#070B14"/>
+        <text class="mbF" x="850" y="60" font-size="9" fill="#94A3B8">9:41</text>
+
+        <text class="mbF" x="850" y="98" font-size="18" font-weight="700" fill="#F8FAFC">Pustaka Kamu</text>
+
+        <g class="mbF" font-size="9.5" font-weight="600">
+          <rect x="846" y="112" width="62" height="26" rx="13" fill="#63F5C2" fill-opacity="0.14" stroke="#63F5C2" stroke-opacity="0.32"/>
+          <text x="877" y="129" fill="#63F5C2" text-anchor="middle">Playlist</text>
+          <rect x="914" y="112" width="52" height="26" rx="13" fill="#111827" stroke="#1E293B"/>
+          <text x="940" y="129" fill="#94A3B8" text-anchor="middle">Artis</text>
+          <rect x="972" y="112" width="58" height="26" rx="13" fill="#111827" stroke="#1E293B"/>
+          <text x="1001" y="129" fill="#94A3B8" text-anchor="middle">Album</text>
+          <rect x="846" y="146" width="76" height="26" rx="13" fill="#111827" stroke="#1E293B"/>
+          <text x="884" y="163" fill="#94A3B8" text-anchor="middle">Unduhan</text>
+          <rect x="928" y="146" width="86" height="26" rx="13" fill="#111827" stroke="#1E293B"/>
+          <text x="971" y="163" fill="#94A3B8" text-anchor="middle">Terakhir diputar</text>
+        </g>
+
+        <rect x="846" y="186" width="218" height="52" rx="14" fill="url(#mbGradA)" fill-opacity="0.12" stroke="#63F5C2" stroke-opacity="0.28"/>
+        <path d="M862 205a8 8 0 1 0 8 8v-12l8-2" fill="none" stroke="#63F5C2" stroke-width="1.8"/>
+        <text class="mbF" x="892" y="207" font-size="13" font-weight="700" fill="#F8FAFC">Lagu yang Disukai</text>
+        <text class="mbF" x="892" y="224" font-size="10" fill="#94A3B8">5 lagu · playlist sistem</text>
+
+        <g class="mbF" font-size="11">
+          <rect x="846" y="252" width="105" height="104" rx="14" fill="#111827" stroke="#1E293B"/>
+          <rect x="846" y="252" width="105" height="62" rx="14" fill="url(#mbArt2)"/>
+          <text x="858" y="332" font-weight="600" fill="#F8FAFC">My Favorites</text>
+          <text x="858" y="346" font-size="9" fill="#94A3B8">5 lagu</text>
+
+          <rect x="959" y="252" width="105" height="104" rx="14" fill="#111827" stroke="#1E293B"/>
+          <rect x="959" y="252" width="105" height="62" rx="14" fill="url(#mbArt1)"/>
+          <text x="971" y="332" font-weight="600" fill="#F8FAFC">Chill Vibes</text>
+          <text x="971" y="346" font-size="9" fill="#94A3B8">5 lagu</text>
+
+          <rect x="846" y="368" width="105" height="104" rx="14" fill="#111827" stroke="#1E293B"/>
+          <rect x="846" y="368" width="105" height="62" rx="14" fill="url(#mbArt3)"/>
+          <text x="858" y="448" font-weight="600" fill="#F8FAFC">Workout Energy</text>
+          <text x="858" y="462" font-size="9" fill="#94A3B8">5 lagu</text>
+
+          <rect x="959" y="368" width="105" height="104" rx="14" fill="#111827" stroke="#1E293B"/>
+          <rect x="959" y="368" width="105" height="62" rx="14" fill="url(#mbArt4)"/>
+          <text x="971" y="448" font-weight="600" fill="#F8FAFC">80s Essentials</text>
+          <text x="971" y="462" font-size="9" fill="#94A3B8">5 lagu</text>
+        </g>
+
+        <rect x="830" y="494" width="250" height="40" fill="#0D1322"/>
+        <line x1="830" y1="494" x2="1080" y2="494" stroke="#1E293B"/>
+        <g fill="none" stroke="#64748B" stroke-width="1.6"><path d="M860 514v-7l6-5 6 5v7z"/></g>
+        <text class="mbF" x="866" y="527" font-size="7.5" fill="#64748B" text-anchor="middle">Beranda</text>
+        <g fill="none" stroke="#64748B" stroke-width="1.6"><circle cx="926" cy="510" r="5.5"/><path d="M930 514l4 4"/></g>
+        <text class="mbF" x="928" y="527" font-size="7.5" fill="#64748B" text-anchor="middle">Cari</text>
+        <g fill="none" stroke="#63F5C2" stroke-width="1.6"><path d="M984 505h5l6-6v18l-6-6h-5z"/></g>
+        <text class="mbF" x="988" y="527" font-size="7.5" fill="#63F5C2" text-anchor="middle">Pustaka</text>
+        <g fill="none" stroke="#64748B" stroke-width="1.6"><circle cx="1048" cy="510" r="5"/><path d="M1038 520a10 10 0 0 1 20 0"/></g>
+        <text class="mbF" x="1048" y="527" font-size="7.5" fill="#64748B" text-anchor="middle">Profil</text>
+      </g>
+      <text class="mbF" x="955" y="558" font-size="12.5" font-weight="600" fill="#F8FAFC" text-anchor="middle">Pustaka + tab navigasi</text>
+    </g>
+  </g>
+
+  <rect x="0.75" y="0.75" width="1198.5" height="618.5" rx="27.5" fill="none" stroke="#1E293B"/>
+</svg>
